@@ -1,14 +1,22 @@
 .navbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
   height:66px;
   padding: 8px 0px;
   background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(30px);
   display: flex;
+  transition: all ease-in-out 0.2s;
+  box-shadow: 0 4px 32px rgb(0 0 0 / 3%);
   align-items: center;
   
   .nav-menu{
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: flex-end;
     .nav-item{
       margin: 0 25px;
       .nav-link{

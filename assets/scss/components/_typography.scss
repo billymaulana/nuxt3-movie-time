@@ -4,9 +4,23 @@
 .text-yellow{
     color: $yellow;
 }
+.text-gray{
+    color: $gray;
+}
+.text-gray-2{
+    color: $gray-2;
+}
 
 .font-weight-700{
     font-weight: 700;
+}
+
+.text-title{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: $gray;
 }
 
 // font size
