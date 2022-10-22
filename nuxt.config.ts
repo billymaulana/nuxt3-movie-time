@@ -100,7 +100,7 @@ export default defineNuxtConfig({
     prefetch: true,
     preconnect: true,
     preload: true,
-    download: true,
+    // download: true,
     inject: true,
   },
   vueuse: {
@@ -111,9 +111,9 @@ export default defineNuxtConfig({
 
     css: {
       preprocessorOptions: {
-        scss: {
-          quietDeps: true,
-        },
+        // scss: {
+          // quietDeps: true,
+        // },
       },
     },
     build: {
