@@ -3,7 +3,7 @@
     <div class="container">
       <div class="flex items-center justify-between">
         <div class="flex items-center justify-between w-full">
-          <NuxtLink>
+          <NuxtLink to="/">
             <img src="@/assets/images/logo.svg" class="navbar-logo" alt="MoovieTime">
           </NuxtLink>
           <form role="search" class="form-search ml-10" w:sm="hidden" w:md="hidden" w:lg="flex">
