@@ -1,0 +1,74 @@
+.card{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background: $white;
+  border-radius: $card-border-radius;
+  -webkit-border-radius: $card-border-radius;
+  -moz-border-radius: $card-border-radius;
+  -ms-border-radius: $card-border-radius;
+  -o-border-radius: $card-border-radius;
+  .card-body{
+    flex: 1 1 auto;
+    padding:1 rem;
+  }
+}
+
+.card-dashboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 12px 0;
+  padding: 24px;
+  min-height: 148px;
+  background: $blue-10;
+  @media (min-width: 360px) {
+    min-width: 154px;
+  }
+}
+
+.card-icons{
+  padding: 12px;
+  margin-right: 16px;
+  width: 44px;
+  height: 44px;
+  background: $blue-10;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-history{
+  background: $gray-07;
+  border:1px solid $silver-03;
+  border-radius: 4px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  color: $gray-03;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 20px;
+  margin-bottom: 16px;
+  overflow-x: hidden;
+}
+
+.card-reward-coupon{
+  padding: 12px;
+  border: 1px solid $silver-03;
+  border-radius: 4px;
+  display: block;
+  margin-bottom: 16px;
+  width: 100%;
+  overflow-x: hidden;
+}
+.inactive{
+  background: $gray-07!important;
+  color: $gray-03!important;
+  // filter: grayscale(1);
+}

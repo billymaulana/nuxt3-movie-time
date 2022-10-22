@@ -1,0 +1,13 @@
+.hero{
+    width: 100vw;
+    min-height: 500px;
+    &::before{
+        content: '';
+        width: 100%;
+        position: absolute;
+        top:0;
+        left: 0;
+        height: 500px;
+        z-index: -1;   
+    }
+}

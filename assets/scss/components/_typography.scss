@@ -1,0 +1,24 @@
+.text-white{
+    color:$white;
+}
+.text-yellow{
+    color: $yellow;
+}
+
+.font-weight-700{
+    font-weight: 700;
+}
+
+// font size
+@for $fs from 1 to 100 {
+    .f-#{$fs} {
+      font-size:$fs+px; 
+    }  
+}  
+
+// line-height
+@for $ls from 1 to 100 {
+    .lh-#{$ls} {
+        line-height:$ls+px; 
+    }
+}  

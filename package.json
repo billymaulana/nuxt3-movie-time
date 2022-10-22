@@ -1,0 +1,33 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "lint": "eslint .",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "start": "node .output/server/index.mjs"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.27.0",
+    "@nuxtjs/google-fonts": "3.0.0-0",
+    "@pinia/nuxt": "^0.4.3",
+    "@vueuse/nuxt": "^9.3.1",
+    "eslint": "^8.24.0",
+    "modern-css-reset": "^1.4.0",
+    "modern-normalize": "^1.1.0",
+    "nuxt": "3.0.0-rc.12",
+    "nuxt-windicss": "^2.5.2",
+    "pinia": "^2.0.22",
+    "typescript": "^4.8.3",
+    "vite": "^3.1.8",
+    "vue": "^3.2.41"
+  },
+  "dependencies": {
+    "nuxt-icon": "^0.1.6",
+    "sass": "^1.55.0",
+    "vue3-a11y-modal": "^0.0.3",
+    "vue3-carousel": "^0.2.4"
+  }
+}
