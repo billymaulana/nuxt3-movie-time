@@ -1,3 +1,22 @@
 {
-    "extends": "@antfu"
+    "extends": "@antfu",
+    "prettier/prettier": [
+        "warn",
+        {
+            "printWidth": 90,
+            "singleQuote": true,
+            "trailingComma": "all",
+            "semi": true,
+            "htmlWhitespaceSensitivity": "css",
+            "arrowParens": "avoid",
+            "bracketSameLine": true,
+            "singleAttributePerLine": false,
+            "tabWidth": 1,
+            "useTabs": true,
+            "vueIndentScriptAndStyle": true,
+            "bracketSpacing": true,
+            "proseWrap":"always",
+            "jsxBracketSameLine": true
+        }
+    ]
 }
