@@ -12,11 +12,15 @@
   transition: all ease-in-out 0.2s;
   box-shadow: 0 4px 32px rgb(0 0 0 / 3%);
   align-items: center;
-  
+  .navbar-logo{
+    height: 33px;
+    object-fit: contain;
+  }
   .nav-menu{
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    white-space: nowrap;
     .nav-item{
       margin: 0 25px;
       .nav-link{

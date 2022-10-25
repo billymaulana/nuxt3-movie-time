@@ -1,3 +1,8 @@
+p{
+    color: $black;
+    font-size: 14px;
+    line-height: 18px;
+}
 .text-white{
     color:$white;
 }
@@ -10,11 +15,9 @@
 .text-gray-2{
     color: $gray-2;
 }
-
-.font-weight-700{
-    font-weight: 700;
+.text-red{
+    color:$red;
 }
-
 .text-title{
     font-style: normal;
     font-weight: 600;
@@ -22,6 +25,11 @@
     line-height: 29px;
     color: $gray;
 }
+
+.font-weight-700{
+    font-weight: 700;
+}
+
 
 // font size
 @for $fs from 1 to 100 {
