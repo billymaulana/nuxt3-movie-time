@@ -1,12 +1,12 @@
 <template>
-  <footer class="footer w-screen text-gray-2 f-12">
+  <footer class="footer w-screen text-gray-2 f-12 relative">
     <div class="container">
       <div class="row justify-between">
-        <div class="w-screen flex items-center justify-between">
+        <div class="w-screen flex items-center justify-between py-5">
           <div>© 2021 MoovieTime. All rights reserved.</div>
-          <div class="px-2">
+          <Nuxt-link class="px-2 block">
             <img src="@/assets/images/logo.svg" alt="MoovieTime logo" class="logo-grey" width="90px" height="25px">
-          </div>
+          </Nuxt-link>
           <div>Made with Nuxt3</div>
         </div>
       </div>

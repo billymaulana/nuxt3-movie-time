@@ -3,7 +3,7 @@ import { Carousel, Pagination, Slide } from 'vue3-carousel'
 
 const { data: nowMovies } = await useFetch<{ results: ApiMovie[] }>(
   '/api/movies')
-const { data: genreList } = await useFetch<{ results: ApiGenre[] }>(
+const { data: genreList } = await useFetch<{ genres: ApiGenre[] }>(
   '/api/genre')
 const setting = ref({
   breakpoints: {
@@ -34,7 +34,7 @@ const setting = ref({
                 </div>
                 <div class="card-slider-content text-left">
                   <div class="text-white lh-22 f-18 font-weight-700 flex items-center mb-[10px]">
-                    <Icon name="ic:baseline-star" size="18" class="text-yellow mr-[5px]" /><span> {{ movie.vote_average }}</span>
+                    <Icon name="ic:baseline-star" size="18" class="text-yellow mr-[5px]" /><span> {{ Math.ceil(movie.vote_average).toFixed(1) }}</span>
                   </div>
                   <div class="movie-title mb-[10px]">
                     {{ movie.title }}
@@ -42,11 +42,12 @@ const setting = ref({
                   <div class="mb-[12px] flex items-center">
                     <span>{{ movie.release_date.slice(0, 4) }}</span>
                     <span class="dot" />
-                    <span v-for="(genreResult, id) in genreList?.results" :key="id">
-                      <span v-for="(movieGenre, idx) in movie.genre_ids" :key="idx">
-                        {{ genreResult.id === movieGenre ? genreResult?.name : null }}
-                      </span>
+                    <!-- <span v-for="(movieGenre, idx) in movie?.genre_ids" :key="idx"> -->
+                    <span v-for="(genreResult, id) in genreList!.genres" :key="id">
+                      <!-- {{ genreResult.id === movieGenre ? `${genreResult?.name}` : null }} -->
+                      {{ genreResult.id === movie?.genre_ids[0] ? `${genreResult?.name}` : null }}
                     </span>
+                    <!-- </span> -->
                   </div>
                   <div class="f-12 lh-18 font-weight-normal text-white overview">
                     {{ movie.overview }}

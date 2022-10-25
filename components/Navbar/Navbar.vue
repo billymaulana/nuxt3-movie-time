@@ -1,3 +1,28 @@
+<script setup lang="ts">
+const pages = [
+  {
+    path:'/categories',
+    title: 'Categories',
+    icon:'ic:round-grid-view'
+  },
+  {
+    path:'/movies',
+    title: 'movies',
+    icon:null,
+  },
+  {
+    path:'/shows',
+    title: 'TV Shows',
+    icon:null,
+  },
+  {
+    path:'/login',
+    title: 'Login',
+    icon:null,
+  },
+  
+]
+</script>
 <template>
   <nav class="navbar w-screen">
     <div class="container">
@@ -11,33 +36,18 @@
               <span class="prepend">
                 <Icon name="ic:round-movie" size="21" />
               </span>
-              <label class="hidden">Search</label>
               <input type="search" placeholder="Find movie" aria-label="Search">
               <button type="submit" class="append">
                 <Icon name="ic:baseline-search" size="24" />
               </button>
+              <label class="hidden">Search</label>
             </div>
           </form>
         </div>
-        <ul class="nav-menu w-full">
-          <li class="nav-item">
-            <NuxtLink class="nav-link" href="#">
-              <Icon name="ic:round-grid-view" size="16" class="mr-2" /> Categories
-            </NuxtLink>
-          </li>
-          <li class="nav-item">
-            <NuxtLink class="nav-link">
-              Movies
-            </NuxtLink>
-          </li>
-          <li class="nav-item">
-            <NuxtLink class="nav-link">
-              TV Shows
-            </NuxtLink>
-          </li>
-          <li class="nav-item">
-            <NuxtLink class="nav-link">
-              Login
+        <ul class="nav-menu">
+          <li class="nav-item" v-for="page in pages" :key="page.path" :to="page.path">
+            <NuxtLink class="nav-link" :key="page.path" :to="page.path">
+              <Icon v-if="page.icon" :name="page.icon" size="16" class="mr-2" /> {{ page.title }}
             </NuxtLink>
           </li>
         </ul>
