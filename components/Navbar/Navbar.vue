@@ -3,7 +3,7 @@ const pages = [
   {
     path:'/categories',
     title: 'Categories',
-    icon:'ic:round-grid-view'
+    icon:'ic:round-grid-view',
   },
   {
     path:'/movies',
