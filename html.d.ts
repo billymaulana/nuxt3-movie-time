@@ -19,9 +19,9 @@ declare module '@nuxt/schema' {
 		};
 	}
 }
-declare module 'vue3-a11y-modal'{
-	interface vue3a11yModal{
-	}
-}
+// declare module 'vue3-a11y-modal'{
+// 	interface vue3a11yModal{
+// 	}
+// }
 // It is always important to ensure you import/export something when augmenting a type
 export {};
