@@ -1,28 +1,29 @@
 <script setup lang="ts">
 const pages = [
   {
-    path:'/categories',
+    path: '/categories',
     title: 'Categories',
-    icon:'ic:round-grid-view',
+    icon: 'ic:round-grid-view',
   },
   {
-    path:'/movies',
+    path: '/movies',
     title: 'movies',
-    icon:null,
+    icon: null,
   },
   {
-    path:'/shows',
+    path: '/shows',
     title: 'TV Shows',
-    icon:null,
+    icon: null,
   },
   {
-    path:'/login',
+    path: '/login',
     title: 'Login',
-    icon:null,
+    icon: null,
   },
-  
+
 ]
 </script>
+
 <template>
   <nav class="navbar w-screen">
     <div class="container">
@@ -45,8 +46,8 @@ const pages = [
           </form>
         </div>
         <ul class="nav-menu">
-          <li class="nav-item" v-for="page in pages" :key="page.path" :to="page.path">
-            <NuxtLink class="nav-link" :key="page.path" :to="page.path">
+          <li v-for="page in pages" :key="page.path" class="nav-item" :to="page.path">
+            <NuxtLink :key="page.path" class="nav-link" :to="page.path">
               <Icon v-if="page.icon" :name="page.icon" size="16" class="mr-2" /> {{ page.title }}
             </NuxtLink>
           </li>
