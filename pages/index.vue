@@ -41,9 +41,9 @@ const { data: discover, pending } = await useFetch<{ results: ApiMovie[] }>(
                   class="col-6 col-md-4 col-lg-2x"
                 >
                   <NuxtLink
-                    :key="`/movies/${listDiscover.id}/`"
+                    :key="`/movies/${listDiscover.id}`"
                     class="mb-[40px] block cursor-pointer"
-                    :to="{ path: `/movies/${listDiscover.id}/` }"
+                    :to="{ path: `/movies/${listDiscover.id}` }"
                   >
                     <img
                       class="image-poster mb-[12px]"
@@ -64,7 +64,7 @@ const { data: discover, pending } = await useFetch<{ results: ApiMovie[] }>(
         </div>
       </section>
     </div>
-    <div v-if="pending">
+    <div v-else>
       <Loaders />
     </div>
   </main>

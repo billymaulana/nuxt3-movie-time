@@ -1,4 +1,4 @@
-const key = process.env.THE_MOVIE_DB_KEY
+const key = process.env.THE_MOVIE_DB_KEY || '7b082dd464ef4fd2369fdc571c5559f6'
 
 export default defineEventHandler((event) => {
   const movieId = event.context.params.movieId

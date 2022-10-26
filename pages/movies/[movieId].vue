@@ -127,7 +127,7 @@ const checkImgAreBroken = () => {
                   <img v-if="review.author_details?.avatar_path" :src="isAvatarBroken === true ? 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5xh1TEMCLzKUNP3G8GY7ID5eBpoVNLZjdpSY6NcjI5A&s' : review.author_details?.avatar_path.substring(1)" class="rounded-full" width="48px" height="48px" alt="avatar image" @error="checkImgAreBroken">
                   <img v-else src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5xh1TEMCLzKUNP3G8GY7ID5eBpoVNLZjdpSY6NcjI5A&s" class="rounded-full" width="48px" height="48px" :alt="review?.author_details?.username">
                   <div class="font-semibold ml-2">
-                    <!-- {{ review.author_details.username }} -->
+                    {{ review.author_details?.username }}
                   </div>
                 </div>
                 <div class="flex items-center">

@@ -23,7 +23,7 @@ const setting = ref({
       <div class="row px-0">
         <div v-if="nowMovies" class="col-md-12 px-0">
           <Carousel :wrap-around="true" snap-align="center" :autoplay="3000" :breakpoints="setting.breakpoints">
-            <Slide v-for="movie in nowMovies.results?.slice(0, 5)" :key="movie.title">
+            <Slide v-for="movie in nowMovies.results" :key="movie.title">
               <NuxtLink :key="`/movies/${movie.id}/`" class="block card-slider-wrapper" :to="`/movies/${movie.id}/`">
                 <div class="card-slider-poster">
                   <img
@@ -42,12 +42,9 @@ const setting = ref({
                   <div class="mb-[12px] flex items-center">
                     <span>{{ movie.release_date.slice(0, 4) }}</span>
                     <span class="dot" />
-                    <!-- <span v-for="(movieGenre, idx) in movie?.genre_ids" :key="idx"> -->
                     <span v-for="(genreResult, id) in genreList!.genres" :key="id">
-                      <!-- {{ genreResult.id === movieGenre ? `${genreResult?.name}` : null }} -->
                       {{ genreResult.id === movie?.genre_ids[0] ? `${genreResult?.name}` : null }}
                     </span>
-                    <!-- </span> -->
                   </div>
                   <div class="f-12 lh-18 font-weight-normal text-white overview">
                     {{ movie.overview }}
