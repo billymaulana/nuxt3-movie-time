@@ -11,12 +11,12 @@ const pages = [
     icon: null,
   },
   {
-    path: '/shows',
+    path: '/shows/',
     title: 'TV Shows',
     icon: null,
   },
   {
-    path: '/login',
+    path: '/login/',
     title: 'Login',
     icon: null,
   },

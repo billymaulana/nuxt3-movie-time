@@ -24,7 +24,7 @@ const setting = ref({
         <div v-if="nowMovies" class="col-md-12 px-0">
           <Carousel :wrap-around="true" snap-align="center" :autoplay="3000" :breakpoints="setting.breakpoints">
             <Slide v-for="movie in nowMovies.results?.slice(0, 5)" :key="movie.title">
-              <NuxtLink class="block card-slider-wrapper" :to="`/movies/${movie.id}`">
+              <NuxtLink :key="`/movies/${movie.id}/`" class="block card-slider-wrapper" :to="`/movies/${movie.id}/`">
                 <div class="card-slider-poster">
                   <img
                     class="image-poster"
