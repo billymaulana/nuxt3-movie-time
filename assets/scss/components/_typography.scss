@@ -25,7 +25,12 @@ p{
     line-height: 29px;
     color: $gray;
 }
-
+.text-ellipsis-10{
+    display: -webkit-box;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
 .font-weight-700{
     font-weight: 700;
 }

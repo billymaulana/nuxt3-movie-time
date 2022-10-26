@@ -15,6 +15,9 @@ const { data: movie } = await useFetch<ApiMovieDetail>(
 const { data: reviews }: any = await useFetch<ApiReviews>(`/api/movies/${movieId}/reviews`, {
   initialCache: false,
 })
+const { data: recommendations }: any = await useFetch<ApiMovie>(`/api/movies/${movieId}/recommendations`, {
+  initialCache: false,
+})
 const moneyFormat = (n: any) => {
   const val = n
   return `$${val?.toFixed(0).replace(/./g, (c: any, i: any, a: any) => {
@@ -112,9 +115,9 @@ const checkImgAreBroken = () => {
         </div>
       </div>
     </section>
-    <section class="reviews-section bg-white pb-10">
+    <section v-if="reviews" class="reviews-section bg-white pb-10">
       <div class="container flex">
-        <div v-if="reviews" class="row">
+        <div class="row">
           <div class="col-md-12">
             <h3 class="f-14 text-red font-semibold lh-[18px] mb-3">
               Review
@@ -124,7 +127,7 @@ const checkImgAreBroken = () => {
             <div class="card-reviews">
               <div class="flex justify-between">
                 <div class="flex items-center">
-                  <img v-if="review.author_details?.avatar_path" :src="isAvatarBroken === true ? 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5xh1TEMCLzKUNP3G8GY7ID5eBpoVNLZjdpSY6NcjI5A&s' : review.author_details?.avatar_path.substring(1)" class="rounded-full" width="48px" height="48px" alt="avatar image" @error="checkImgAreBroken">
+                  <img v-if="review.author_details?.avatar_path" :src="isAvatarBroken === true ? 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5xh1TEMCLzKUNP3G8GY7ID5eBpoVNLZjdpSY6NcjI5A&s' : `https://image.tmdb.org/t/p/original${review.author_details?.avatar_path}`" class="rounded-full" width="48px" height="48px" alt="avatar image" @error="checkImgAreBroken">
                   <img v-else src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5xh1TEMCLzKUNP3G8GY7ID5eBpoVNLZjdpSY6NcjI5A&s" class="rounded-full" width="48px" height="48px" :alt="review?.author_details?.username">
                   <div class="font-semibold ml-2">
                     {{ review.author_details?.username }}
@@ -135,17 +138,52 @@ const checkImgAreBroken = () => {
                   <span class="f-36 text-black font-semibold">{{ Math.ceil(review.author_details?.rating).toFixed(1) }}</span>
                 </div>
               </div>
-              <div class="pt-2 italic lh-20">
-                {{ review?.content }}
+              <div class="pt-2">
+                <div class="italic lh-20 text-ellipsis-10">
+                  {{ review?.content }}
+                </div>
+                <NuxtLink v-if="review.url" class="inline-flex text-red f-14 italic justify-end w-full px-3" :to="review.url" target="_blank">
+                  Read More
+                </NuxtLink>
               </div>
             </div>
           </div>
         </div>
-        <div v-else class="row">
+      </div>
+    </section>
+    <section v-if="recommendations" class="recommendation-section py-10">
+      <div class="container">
+        <div class="row">
           <div class="col-md-12">
-            <div class="font-semibold">
-              Data Not Found
-            </div>
+            <h4 class="uppercase font-semibold lh-[18px] mb-3">
+              Recommendation Movies
+            </h4>
+          </div>
+        </div>
+
+        <div class="row">
+          <div
+            v-for="(listRecommendation, id) in recommendations.results.slice(0, 5)"
+            :key="id"
+            class="col-6 col-md-4 col-lg-2x"
+          >
+            <NuxtLink
+              :key="`/movies/${listRecommendation.id}`"
+              class="mb-[40px] block cursor-pointer"
+              :to="{ path: `/movies/${listRecommendation.id}` }"
+            >
+              <img
+                class="image-poster mb-[12px]"
+                :src="`https://image.tmdb.org/t/p/w500/${listRecommendation.poster_path}`"
+                loading="lazy"
+              >
+              <h2 class="font-semibold text-gray lh-20 mb-[3px]">
+                {{ listRecommendation.title }}
+              </h2>
+              <div class="text-gray-2">
+                {{ listRecommendation.release_date.toString().slice(0, 4) }}
+              </div>
+            </NuxtLink>
           </div>
         </div>
       </div>

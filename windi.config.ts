@@ -6,6 +6,7 @@ import type { Plugin } from 'windicss/types/interfaces'
 import WindiTypography from 'windicss/plugin/typography'
 import WindiAspectRatio from 'windicss/plugin/aspect-ratio'
 import WindiFilters from 'windicss/plugin/filters'
+import WindiClamps from 'windicss/plugin/line-clamp'
 
 export default defineConfig({
   preflight: true,
@@ -69,5 +70,7 @@ export default defineConfig({
     WindiFilters as Plugin,
     WindiTypography as Plugin,
     WindiAspectRatio as Plugin,
+    WindiAspectRatio as Plugin,
+    WindiClamps as Plugin,
   ] as Plugin[],
 })
