@@ -43,4 +43,4 @@ pnpm dev
 
 Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment).
 
-Demo: url soon
+Demo: (https://nuxt-moovie-time.netlify.app/)
